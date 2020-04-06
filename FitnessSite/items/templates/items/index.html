@@ -1,0 +1,30 @@
+{% load static %}
+<script src="{% static 'items/js/items.js' %}"></script>
+<button type="button" onclick="create()">新增項目</button>
+
+{% if part_list %}
+<ul>
+    {% for part in part_list %}
+    <li>
+        <a href="{% url 'items:index_Part' part.pk %}">
+            {{part.part_name}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if item_list %}
+<ul>
+    {% for item in item_list %}
+    <li>
+        <a href="{% url 'items:detail' item.pk %}">
+            {{item.item_name}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+<div id="displayItem">
+
+</div>

@@ -1,0 +1,17 @@
+{
+    // "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.pythonPath": "env\\Scripts\\python.exe",
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django",
+    ],
+    "beautify.language": {
+        "html": [
+            "htm", "html", "django-html"
+        ]
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true,
+
+
+}

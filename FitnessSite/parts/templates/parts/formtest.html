@@ -1,0 +1,18 @@
+{% if error_message %}
+<p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form name="partForm" action="" method="POST">
+    {% csrf_token %}
+    <div>
+        {{form.subject.errors}}
+        <label for="{{form.subject.id_for_label}}">
+            Email subject:
+        </label>
+        {{form.subject}}
+    </div>
+
+    <div>
+        <button type="submit">送出</button>
+    </div>
+</form>

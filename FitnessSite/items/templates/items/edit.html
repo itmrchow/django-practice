@@ -1,0 +1,23 @@
+<form name="itemForm" action="{% url action %}" method="POST">
+    {% csrf_token %}
+    <div>
+        <label>部位：</label>
+        <select id="part" name="part">
+            <option value="">請選擇</option>
+            {% for part in part_list %}
+            <option value="{{part.pk}}" 
+                {% if actionitem.part.pk == part.pk %}selected="selected"{% endif %}>
+                {{part.part_name}}
+            </option>
+            {% endfor %}
+        </select>
+    </div>
+    <div>
+        <label>動作項目：</label>
+
+        <input id="item_name" name="item_name" value="{{actionitem.item_name}}">
+    </div>
+
+    <button type="submit">送出</button>
+    <button type="reset">清除</button>
+</form>
